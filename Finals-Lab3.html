@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finals-Lab3</title>
+    <style>
+* {
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+line-height: 1.6;
+color: #222;
+background-color: #f9f9f9;
+padding: 10px;
+}
+
+.container {
+width: 100%;
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.row {
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+gap: 15px;
+}
+
+.col-1 {
+grid-column: span 1;
+}
+
+.col-2 {
+grid-column: span 2;
+}
+
+.col-3 {
+grid-column: span 3;
+}
+
+.col-4 {
+grid-column: span 4;
+}
+
+.col-5 {
+grid-column: span 5;
+}
+
+.col-6 {
+grid-column: span 6;
+}
+
+.col-7 {
+grid-column: span 7;
+}
+
+.col-8 {
+    grid-column: 8;
+}
+
+.col-12 {
+grid-column: span 12;
+}
+
+@media (max-width: 600px) {
+.row {
+grid-template-columns: 1fr;
+}   
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+.row {
+grid-template-columns:
+repeat(6, 1fr);
+}
+}
+
+@media (min-width: 901px) {
+.row {
+grid-template-columns: repeat(12, 1fr);
+}
+}
+
+.box {
+background: #e1e1e1;
+border: 1px solid #ccc;
+padding: 20px;
+text-align: center;
+border-radius: 5px;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 box">Header</div>
+        </div>
+    
+        <div class="row">
+
+            <div class="col-5 box">Sidebar</div>
+
+            <div class="col-7 box">
+
+                <div class="row">
+                    <div class="col-6 box">Sub Content 1</div>
+                    <div class="col-6 box">Sub Content 2</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+
+            <div class="col-12 box">Footer</div>
+        </div>
+    </div>
+    
+</body>
+</html>
