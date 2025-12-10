@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 76px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            height: 60px;
+            margin: 20px;
+            border-radius: 16px;
+            padding: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 500;
+            color: #000;
+            font-size: 24px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333 !important;
+        }
+
+        .nav-link:hover {
+            color: #0d6efd !important;
+        }
+
+        /* Hero Section - Carousel */
+        .carousel-item {
+            height: 500px;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        /* Articles/Services */
+        #articles {
+            padding: 4rem 0;
+        }
+
+        #articles h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        #articles h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #00adb5;
+        }
+
+        .articles-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .article-inside {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .article-inside:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .aricle-content {
+            padding: 20px;
+        }
+
+        .aricle-content h3 {
+            color: #1a3a5f;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .read-more {
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .read-more:hover {
+            color: #0b5ed7;
+            text-decoration: underline;
+        }
+
+        /* Badges */
+        .badge-custom {
+            font-size: 0.8rem;
+            padding: 0.4em 0.8em;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-ai {
+            background-color: #dc3545;
+        }
+
+        .badge-innovation {
+            background-color: #20c997;
+        }
+
+        /* Buttons */
+        .btn-tech {
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+        }
+
+        /* Grid Sections */
+        .grid-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            color: #1a1a2e;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #00adb5;
+        }
+
+        /* Simple Footer */
+        .simple-footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #00adb5;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TECHSAVY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TECHSAVY</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active mx-lg-4" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-4" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-4" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-4" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero-section">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/1_BWMkpdLhhRBMtDb_4iUxfg.jpg" class="d-block w-100" alt="Cybersecurity">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Cybersecurity Solutions</h2>
+                        <p>Protect your business from modern cyber threats</p>
+                        <button class="btn btn-tech btn-primary">Learn More</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/shutterstock-business-technology-1024x710.jpg" class="d-block w-100" alt="Cloud Computing">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Cloud Computing Services</h2>
+                        <p>Scale your business with secure cloud infrastructure</p>
+                        <button class="btn btn-tech btn-primary">Explore Solutions</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1-1500x1000.jpg" class="d-block w-100" alt="AI Technology">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>AI-Powered Solutions</h2>
+                        <p>Transform your business with artificial intelligence</p>
+                        <button class="btn btn-tech btn-primary">Discover AI</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="articles">
+        <div class="container">
+            <h2>SERVICES</h2>
+
+            <div class="articles-box">
+                <div class="article-inside">
+                    <div class="article-image" style="background-image: url(images/pros-and-cons-scaled-2560x1280.jpeg);"></div>
+                    <div class="aricle-content">
+                        <h3>Cybersecurity solutions</h3>
+                        <!-- Badges added -->
+                        <span class="badge badge-custom badge-ai">AI-Powered</span>
+                        <span class="badge badge-custom badge-innovation">Innovation</span>
+                        <p>Cybersecurity solutions. With the rise of cyberattacks and data breaches, cybersecurity has become a top priority for businesses of all sizes.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="article-inside">
+                    <div class="article-image" style="background-image: url(images/The\ 5\ Biggest\ Cloud\ Computing\ Trends\ In\ 2021.jpg);"></div>
+                    <div class="aricle-content">
+                        <h3>Cloud computing</h3>
+                        <!-- Badges added -->
+                        <span class="badge badge-custom badge-innovation">Innovation</span>
+                        <span class="badge badge-custom badge-ai">AI-Powered</span>
+                        <p>Cloud computing has become increasingly popular in recent years. It allows businesses to store and access data and applications remotely.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="article-inside">
+                    <div class="article-image" style="background-image: url(images/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1-1500x1000.jpg);"></div>
+                    <div class="aricle-content">
+                        <h3>Artificial intelligence</h3>
+                        <!-- Badges added -->
+                        <span class="badge badge-custom badge-ai">AI-Powered</span>
+                        <span class="badge badge-custom badge-innovation">Innovation</span>
+                        <p>Artificial intelligence (AI) AI involves the use of algorithms and machine learning to perform tasks that traditionally require human intelligence.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Layout Section 1: Image + Text Side by Side -->
+    <section class="grid-section">
+        <div class="container">
+            <h3 class="section-title">Why Choose TechSavvy?</h3>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="images/pros-and-cons-scaled-2560x1280.jpeg" 
+                         class="img-fluid rounded shadow" 
+                         alt="Technology Solutions">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">Leading Technology Provider</h4>
+                    <p class="mb-3">We combine cutting-edge technology with deep industry expertise to deliver solutions that drive business growth and innovation.</p>
+                    <p class="mb-4">Our team of certified professionals works closely with clients to understand their unique challenges and develop tailored strategies.</p>
+                    
+                    <!-- Badges added -->
+                    <div class="mb-4">
+                        <span class="badge badge-custom badge-ai me-2">AI-Powered</span>
+                        <span class="badge badge-custom badge-innovation">Innovation</span>
+                    </div>
+                    
+                    <!-- Bootstrap Buttons added -->
+                    <div>
+                        <button class="btn btn-tech btn-primary me-3">Get Started</button>
+                        <button class="btn btn-tech btn-outline-primary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Layout Section 2: Features Grid -->
+    <section class="grid-section">
+        <div class="container">
+            <h3 class="section-title">Our Core Features</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-shield-check text-primary mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Enterprise Security</h5>
+                            <p class="card-text">Comprehensive security solutions to protect your data and infrastructure.</p>
+                            <!-- Badge added -->
+                            <span class="badge badge-custom badge-ai">AI-Powered</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-cloud-arrow-up text-primary mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Cloud Migration</h5>
+                            <p class="card-text">Seamless transition to cloud infrastructure with minimal disruption.</p>
+                            <!-- Badge added -->
+                            <span class="badge badge-custom badge-innovation">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-robot text-primary mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">AI Integration</h5>
+                            <p class="card-text">Implement AI and machine learning to automate processes and gain insights.</p>
+                            <!-- Badges added -->
+                            <span class="badge badge-custom badge-ai">AI-Powered</span>
+                            <span class="badge badge-custom badge-innovation">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="simple-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <a href="#" class="footer-brand">TECHSAVY</a>
+                    <p class="mt-2">Leading provider of innovative technology solutions for businesses of all sizes.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <ul class="footer-links">
+                        <li><i class="bi bi-geo-alt me-2"></i> 123 Tech Street</li>
+                        <li><i class="bi bi-telephone me-2"></i> (555) 123-4567</li>
+                        <li><i class="bi bi-envelope me-2"></i> info@techsavvy.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 TechSavvy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
